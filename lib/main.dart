@@ -27,7 +27,10 @@ class MyApp extends StatelessWidget {
           ),
           scaffoldBackgroundColor: const Color(0xFFEDF8E8), // Light Green
         ),
-        home: HomePage(),
+        home: const HomePage(),
+        routes: {
+          '/settings': (context) => const SettingsPage(),
+        },
       ),
     );
   }

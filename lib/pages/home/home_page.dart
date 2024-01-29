@@ -13,7 +13,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Προετημασία Μιχαήλ')),
+      appBar: AppBar(title: const Text('Προετημασία Μιχαήλ'),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.settings),
+          onPressed: () {
+            Navigator.pushNamed(context, '/settings');
+          },
+        ),
+      ]
+       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
