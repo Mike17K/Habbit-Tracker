@@ -2,7 +2,7 @@
     <application
         android:label="habbittracker"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/habittracker">
         <activity
             android:name=".MainActivity"
             android:exported="true"
