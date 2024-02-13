@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habbittracker/pages/home/widgets/habit_timeline_widget.dart';
 import 'package:habbittracker/pages/home/widgets/today_todos_widget.dart';
+import 'package:habbittracker/pages/home/widgets/timer_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -39,6 +40,8 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 16),
             TodayTodosWidget(),
+            SizedBox(height: 80),
+            TimerWidget()
           ],
         ),
       ),

@@ -101,7 +101,7 @@ class _LoadedStateWidgetState extends State<_LoadedStateWidget> {
   Widget build(BuildContext context) {
     checked = List.generate(3, (index) => index < widget.actionNumberToday);
     return SizedBox(
-      height: 45,
+      height: 40,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

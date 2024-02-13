@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:habbittracker/bloc/actions_bloc.dart';
 import 'package:habbittracker/services/crud/local_service.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -38,20 +40,21 @@ class _SettingsPageState extends State<SettingsPage> {
                         child: ElevatedButton(
                           onPressed: () async {
                             // Add your logic to clear data here
-                            // You can show a confirmation dialog or perform the data clearing action
                             setState(() {
                               _isDeleting = true;
                             });
-                            localDatabaseService.clearDatabase().then((value) => {
+                            localDatabaseService.clearDatabase().then((value) {
                                   setState(() {
                                     _isDeleting = false;
-                                  }),
+                                  });
+                                  BlocProvider.of<ActionsBloc>(context).add(ActionsEventsDeleted());
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                       content: Text('Data cleared successfully'),
                                     ),
-                                  ),
+                                  );
                                 }).catchError((error) {
+                                  print(error);
                               setState(() {
                                 _isDeleting = false;
                               });

@@ -25,6 +25,10 @@ class ActionsBloc extends Bloc<ActionsEvent, ActionsState> {
     on<ActionsTodayEventDelete>((event, emit) async {
       emit(await _handleTodayEventDelete(event));
     });
+
+    on<ActionsEventsDeleted>((event, emit) async {
+      emit(const ActionsLoaded(actions: []));
+    });
   }
 
   Future<ActionsState> _handleTodayEventAdd(ActionsTodayEventAdd event) async {

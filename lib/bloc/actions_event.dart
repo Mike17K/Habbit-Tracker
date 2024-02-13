@@ -30,3 +30,5 @@ class ActionsTodayEventDelete extends ActionsEvent {
   @override
   List<Object?> get props => [action];
 }
+
+class ActionsEventsDeleted extends ActionsEvent { }
